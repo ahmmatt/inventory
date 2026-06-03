@@ -7,6 +7,15 @@ class StoreItemRequest extends FormRequest {
         return true; // Ubah jadi true agar diizinkan
     }
 
+    protected function prepareForValidation() {
+        $input = $this->all();
+        array_walk($input, function (&$val) {
+            if (is_string($val)) {
+                $val = trim(strip_tags($val));
+            }
+        });
+        $this->merge($input);
+    }
     public function rules() {
         return [
             'name' => 'required|string|max:255',
