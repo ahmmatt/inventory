@@ -53,6 +53,9 @@ Response: 201 Created
 
 GET /items/{id}
 Response: 200 OK (Menampilkan detail satu item)
+GET /items
+*(Optional)* Tambahkan query `?category_id={id}` untuk menyaring barang berdasarkan kategori.
+Response: 200 OK
 
 PUT /items/{id}
 Body: { name, quantity, price, category_id }
