@@ -24,7 +24,7 @@ class ItemController extends BaseController {
             );
             
         // Gunakan ->values() agar format array JSON tetap rapi
-        return $this->success($items->values(), 'Data ditarik');
+        return $this->success($items->values(), 'Berhasil mengambil daftar item beserta filternya');
     }
 
     public function store(StoreItemRequest $req) {
