@@ -16,6 +16,7 @@ class ItemController extends BaseController {
     }
 
     public function index(Request $request) {
+
         // Ambil semua data dari service, lalu filter jika ada category_id
         $items = $this->svc
             ->all()
